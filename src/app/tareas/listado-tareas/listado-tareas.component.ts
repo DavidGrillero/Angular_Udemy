@@ -20,4 +20,8 @@ export class ListadoTareasComponent {
     // invocamos servicio
     this.tareasService.deleteTarea(tarea.tarea);
   }
+
+  complete(tarea: Tarea) {
+    this.tareasService.completeTarea(tarea.tarea);
+  }
 }

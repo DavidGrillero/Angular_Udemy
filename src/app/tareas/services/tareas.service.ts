@@ -24,6 +24,17 @@ export class TareasService {
   ];
   
   deleteTarea(nombreTarea: string) {
-    this.tareas = this.tareas.filter(tarea=> tarea.tarea !== nombreTarea) // Esto me elimina lo que va dentro de los arrays
+    this.tareas = this.tareas.filter(tarea => tarea.tarea !== nombreTarea) // Esto me elimina lo que va dentro de los arrays
+    console.log(nombreTarea);
+  }
+
+  completeTarea(nombreTarea: string) {
+    const tarea : Tarea = this.tareas.find(tarea => {
+    return tarea.tarea === nombreTarea
+    })! // Find busco según el nombre el elemento. Localizo la tarea y le cambio el estado
+    
+    tarea.completada = !tarea.completada;
+    
+    console.log(tarea);
   }
 }
